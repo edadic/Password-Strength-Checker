@@ -43,15 +43,3 @@ button:hover {
     margin: 5px 0;
     color: #555;
 }
-
-#result.weak {
-    color: red;
-}
-
-#result.moderate {
-    color: orange;
-}
-
-#result.strong {
-    color: green;
-}

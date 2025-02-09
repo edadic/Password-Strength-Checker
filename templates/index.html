@@ -6,6 +6,7 @@
     <title>Password Strength Checker</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
     <h2>🔒 Password Strength Checker</h2>
@@ -13,22 +14,5 @@
     <button onclick="checkPassword()">Check Strength</button>
     <div id="result"></div>
     <div id="feedback"></div>
-
-    <script>
-        function checkPassword() {
-            var password = $("#password").val();
-            $.ajax({
-                url: "/check",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify({ password: password }),
-                success: function(response) {
-                    $("#result").html(response.message).css("color", response.strength === 5 ? "green" : response.strength >= 3 ? "orange" : "red");
-                    var feedbackHtml = "<ul>" + response.feedback.map(f => "<li>" + f + "</li>").join("") + "</ul>";
-                    $("#feedback").html(feedbackHtml);
-                }
-            });
-        }
-    </script>
 </body>
 </html>
