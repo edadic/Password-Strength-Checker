@@ -1,4 +1,4 @@
-function checkPassword() {
+function liveCheckPassword() {
     var password = $("#password").val();
     $.ajax({
         url: "/check",

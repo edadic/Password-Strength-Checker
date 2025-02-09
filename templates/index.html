@@ -10,8 +10,7 @@
 </head>
 <body>
     <h2>🔒 Password Strength Checker</h2>
-    <input type="password" id="password" placeholder="Enter your password">
-    <button onclick="checkPassword()">Check Strength</button>
+    <input type="password" id="password" placeholder="Enter your password" oninput="liveCheckPassword()">
     <div id="result"></div>
     <div id="feedback"></div>
 </body>
