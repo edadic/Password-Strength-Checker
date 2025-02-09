@@ -16,3 +16,9 @@ function liveCheckPassword() {
         }
     });
 }
+
+function togglePasswordVisibility() {
+    const passwordField = $("#password");
+    const type = passwordField.attr("type") === "password" ? "text" : "password";
+    passwordField.attr("type", type);
+}
