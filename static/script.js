@@ -22,3 +22,19 @@ function togglePasswordVisibility() {
     const type = passwordField.attr("type") === "password" ? "text" : "password";
     passwordField.attr("type", type);
 }
+
+function generatePassword() {
+    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()123456789";
+    let password = "";
+    for (let i = 0; i < 12; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    $("#password").val(password);
+    liveCheckPassword();
+}
+
+function generatePasswordAndToggleVisibility() {
+    generatePassword();
+    const passwordField = $("#password");
+    passwordField.attr("type", "text");
+}
