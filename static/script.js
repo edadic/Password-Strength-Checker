@@ -38,3 +38,14 @@ function generatePasswordAndToggleVisibility() {
     const passwordField = $("#password");
     passwordField.attr("type", "text");
 }
+
+$("#copyPassword").on("click", function () {
+    const password = $("#password").val();
+    if (password) {
+        navigator.clipboard.writeText(password);
+        alert("Password copied to clipboard!");
+    } else {
+        alert("No password to copy!");
+    }
+});
+
